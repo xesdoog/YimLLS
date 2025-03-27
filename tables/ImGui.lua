@@ -4,6 +4,133 @@
 ---@alias ImGuiTableSortSpecs any
 ---@alias ImGuiStyle any
 
+---@class ImGuiStyleVar
+ImGuiStyleVar = {
+    Alpha = 0, -- `float`
+    DisabledAlpha = 1, -- `float`
+    WindowPadding = 2, -- `ImVec2`
+    WindowRounding = 3, -- `float`
+    WindowBorderSize = 4, -- `float`
+    WindowMinSize = 5, -- `ImVec2`
+    WindowTitleAlign = 6, -- `ImVec2`
+    ChildRounding = 7, -- `float`
+    ChildBorderSize = 8, -- `float`
+    PopupRounding = 9, -- `float`
+    PopupBorderSize = 10, -- `float`
+    FramePadding = 11, -- `ImVec2`
+    FrameRounding = 12, -- `float`
+    FrameBorderSize = 13, -- `float`
+    ItemSpacing = 14, -- `ImVec2`
+    ItemInnerSpacing = 15, -- `ImVec2`
+    IndentSpacing = 16, -- `float`
+    CellPadding = 17, -- `ImVec2`
+    ScrollbarSize = 18, -- `float`
+    ScrollbarRounding = 19, -- `float`
+    GrabMinSize = 20, -- `float`
+    GrabRounding = 21, -- `float`
+    TabRounding = 22, -- `float`
+    ButtonTextAlign = 23, -- `ImVec2`
+    SelectableTextAlign = 24, -- `ImVec2`
+    SeparatorTextBorderSize = 25, -- `float`
+    SeparatorTextAlign = 26, -- `ImVec2`
+    SeparatorTextPadding = 27, -- `ImVec2`
+    Count = 28
+}
+
+---@class ImGuiCol
+ImGuiCol = {
+    Text = 0x00,
+    TextDisabled = 0x01,
+    WindowBg = 0x02,
+    ChildBg = 0x03,
+    PopupBg = 0x04,
+    Border = 0x05,
+    BorderShadow = 0x06,
+    FrameBg = 0x07,
+    FrameBgHovered = 0x08,
+    FrameBgActive = 0x09,
+    TitleBg = 0x0A,
+    TitleBgActive = 0x0B,
+    TitleBgCollapsed = 0x0C,
+    MenuBarBg = 0x0D,
+    ScrollbarBg = 0x0E,
+    ScrollbarGrab = 0x0F,
+    ScrollbarGrabHovered = 0x10,
+    ScrollbarGrabActive = 0x11,
+    CheckMark = 0x12,
+    SliderGrab = 0x13,
+    SliderGrabActive = 0x14,
+    Button = 0x15,
+    ButtonHovered = 0x16,
+    ButtonActive = 0x17,
+    Header = 0x18,
+    HeaderHovered = 0x19,
+    HeaderActive = 0x1A,
+    Separator = 0x1B,
+    SeparatorHovered = 0x1C,
+    SeparatorActive = 0x1D,
+    ResizeGrip = 0x1E,
+    ResizeGripHovered = 0x1F,
+    ResizeGripActive = 0x20,
+    Tab = 0x21,
+    TabHovered = 0x22,
+    TabActive = 0x23,
+    TabUnfocused = 0x24,
+    TabUnfocusedActive = 0x25,
+    PlotLines = 0x26,
+    PlotLinesHovered = 0x27,
+    PlotHistogram = 0x28,
+    PlotHistogramHovered = 0x29,
+    TableHeaderBg = 0x2A,
+    TableBorderStrong = 0x2B,
+    TableBorderLight = 0x2C,
+    TableRowBg = 0x2D,
+    TableRowBgAlt = 0x2E,
+    TextSelectedBg = 0x2F,
+    DragDropTarget = 0x30,
+    NavHighlight = 0x31,
+    NavWindowingHighlight = 0x32,
+    NavWindowingDimBg = 0x33,
+    ModalWindowDimBg = 0x34,
+    Count = 0x35
+}
+
+---@class ImGuiWindowFlags
+ImGuiWindowFlags = {
+    None = 0x00000000,
+    NoTitleBar = 0x00000001,
+    NoResize = 0x00000002,
+    NoMove = 0x00000004,
+    NoScrollbar = 0x00000008,
+    NoScrollWithMouse = 0x00000010,
+    NoCollapse = 0x00000020,
+    AlwaysAutoResize = 0x00000040,
+    NoBackground = 0x00000080,
+    NoSavedSettings = 0x00000100,
+    NoMouseInputs = 0x00000200,
+    MenuBar = 0x00000400,
+    HorizontalScrollbar = 0x00000800,
+    NoFocusOnAppearing = 0x00001000,
+    NoBringToFrontOnFocus = 0x00002000,
+    AlwaysVerticalScrollbar = 0x00004000,
+    AlwaysHorizontalScrollbar = 0x00008000,
+    AlwaysUseWindowPadding = 0x00010000,
+    NoNavInputs = 0x00020000,
+    NoNavFocus = 0x00040000,
+    UnsavedDocument = 0x00080000,
+    NoDocking = 0x00100000,
+    NoNav = 0x00060000, -- `NoNavInputs | NoNavFocus`
+    NoDecoration = 0x0000003F, -- `NoTitleBar | NoResize | NoScrollbar | NoCollapse`
+    NoInputs = 0x000C0000, -- `NoMouseInputs | NoNav`
+    NavFlattened = 0x00200000,
+    ChildWindow = 0x00000001, -- **[Internal]** Used by `BeginChild()`
+    Tooltip = 0x00000002, -- **[Internal]** Used by `BeginTooltip()`
+    Popup = 0x00000004, -- **[Internal]** Used by `BeginPopup()`
+    Modal = 0x00000008, -- **[Internal]** Used by `BeginPopupModal()`
+    ChildMenu = 0x00000010, -- **[Internal]** Used by `BeginMenu()`
+}
+
+
 ImGui = {}
 
 ---@param name string
@@ -2685,4 +2812,3 @@ function ImGui.ImDrawListAddBezierQuadratic(drawlist, p1X, p1Y, p2X, p2Y, p3X, p
 ---@param thickness number
 ---@param num_segments integer
 function ImGui.ImDrawListAddBezierQuadratic(drawlist, p1X, p1Y, p2X, p2Y, p3X, p3Y, col, thickness, num_segments) end
-

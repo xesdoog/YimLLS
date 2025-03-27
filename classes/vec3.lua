@@ -17,4 +17,3 @@ vec3 = {}
 ---@param z float z component of the vector.
 ---@return vec3
 function vec3:new(x, y, z) end
-

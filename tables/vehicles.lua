@@ -26,7 +26,7 @@ function vehicles.get_vehicle_display_name(vehicle_hash) end
 ---string = vehicles.get_vehicle_display_name(vehicle_name)
 ---```
 ---@param vehicle_name string Name of the vehicle.
----@return string vehicle_display_string: the in-game display string. If the vehicle is not found, or the call is made too early, a blank string will be returned. It is guranteed to return a safe value.
+---@return string -- the in-game display string. If the vehicle is not found, or the call is made too early, a blank string will be returned. It is guranteed to return a safe value.
 function vehicles.get_vehicle_display_name(vehicle_name) end
 
 

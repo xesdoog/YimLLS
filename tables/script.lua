@@ -79,6 +79,7 @@ function script.run_in_fiber(func) end
 ---script.is_active(script_name)
 ---```
 ---@param script_name string The name of the script.
+---@return boolean
 function script.is_active(script_name) end
 
 

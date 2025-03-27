@@ -19,6 +19,7 @@ function network.trigger_script_event(bitset, _args) end
 ---```lua
 ---network.is_session_started()
 ---```
+---@return boolean
 function network.is_session_started() end
 
 
